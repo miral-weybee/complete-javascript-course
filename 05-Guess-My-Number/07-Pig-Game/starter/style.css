@@ -20,6 +20,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
 
 /* LAYOUT */
@@ -66,9 +67,11 @@ main {
 .player--active {
   background-color: rgba(255, 255, 255, 0.4);
 }
+
 .player--active .name {
   font-weight: 700;
 }
+
 .player--active .score {
   font-weight: 400;
 }
@@ -99,6 +102,18 @@ main {
   font-size: 3.5rem;
 }
 
+.btn-dark {
+  font-size: 1.8rem;
+  font-family: inherit;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.modal-body {
+  font-size: 1.8rem;
+  font-weight: 400;
+}
+
 /* ABSOLUTE POSITIONED ELEMENTS */
 .btn {
   position: absolute;
@@ -123,6 +138,15 @@ main {
   box-shadow: 0 1.75rem 3.5rem rgba(0, 0, 0, 0.1);
 }
 
+.modal-footer {
+  height: 7em;
+}
+
+#btn-roll{
+  pointer-events: none;
+  opacity: 0.5;
+}
+
 .btn::first-letter {
   font-size: 2.4rem;
   display: inline-block;
@@ -132,11 +156,21 @@ main {
 .btn--new {
   top: 4rem;
 }
+
 .btn--roll {
   top: 39.3rem;
 }
+
 .btn--hold {
   top: 46.1rem;
+}
+
+.btn--rules {
+  top: 53.1rem;
+}
+
+.btn-close:hover {
+  cursor: pointer;
 }
 
 .btn:active {

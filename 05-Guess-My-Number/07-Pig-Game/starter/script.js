@@ -1,5 +1,25 @@
 'use strict';
 
+window.onload = function () {
+    OpenBootstrapPopup();
+};
+function OpenBootstrapPopup() {
+    $("#myModal").modal('show');
+}
+
+function openHoldPopup(){
+    $("#holdModal").modal('show');
+    let cnt = (100-score[activePlayer] > 0) ? 100-score[activePlayer] : 0;
+    document.getElementById('hold').innerHTML = `Player Switched as per the rules and By holding, It saves your score permenantly and ${cnt} is remaining to win`;
+}
+
+function openOnePopup() {
+    $("#oneModal").modal('show');
+}
+
+function openWinnerPopup(){
+    $("#winnerModal").modal('show');
+}
 
 const player0 = document.querySelector('.player--0');
 const player1 = document.querySelector('.player--1');
@@ -12,6 +32,10 @@ const dice = document.querySelector('.dice');
 const btnNew = document.querySelector('.btn--new');
 const btnRoll = document.querySelector('.btn--roll');
 const btnHold = document.querySelector('.btn--hold');
+const btnRule = document.querySelector('.btn--rules');
+
+btnRule.addEventListener('click',OpenBootstrapPopup);
+
 
 score0.textContent = 0;
 score1.textContent = 0;
@@ -61,6 +85,7 @@ btnRoll.addEventListener('click', function () {
             currentScore += diceNum;
             document.getElementById(`current--${activePlayer}`).textContent = currentScore;
         } else {
+            openOnePopup();
             swithPlayer();
         }
     }
@@ -68,8 +93,6 @@ btnRoll.addEventListener('click', function () {
 
 btnHold.addEventListener('click', function () {
     if (playing) {
-
-
         score[activePlayer] += currentScore;
         document.getElementById(`score--${activePlayer}`).textContent = score[activePlayer];
         if (score[activePlayer] >= 20) {
@@ -77,7 +100,11 @@ btnHold.addEventListener('click', function () {
             dice.classList.add('hidden');
             document.querySelector(`.player--${activePlayer}`).classList.add('player--winner');
             document.querySelector(`.player--${activePlayer}`).classList.remove('player--active');
+            openWinnerPopup();
+            return;
         }
+        
+        openHoldPopup();
         swithPlayer();
     }
 })
