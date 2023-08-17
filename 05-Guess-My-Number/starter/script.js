@@ -37,26 +37,6 @@ document.querySelector('.check').addEventListener(
                 displaMessage("You Lost The Game");
             }
         }
-
-        // else if (guess > secretNumber) {
-        //     if (score > 1) {
-        //         document.querySelector('.message').textContent = 'Too High';
-        //         score--;
-        //         document.querySelector('.score').textContent = score;
-        //     }else {
-        //         document.querySelector('.score').textContent = 0;
-        //         document.querySelector('.message').textContent = "You Lost The Game";
-        //     }
-        // } else if (guess < secretNumber) {
-        //     if (score > 1) {
-        //         document.querySelector('.message').textContent = 'Too Low';
-        //         score--;
-        //         document.querySelector('.score').textContent = score;
-        //     }else {
-        //         document.querySelector('.score').textContent = 0
-        //         document.querySelector('.message').textContent = "You Lost The Game";
-        //     }
-        // }
     });
 
 document.querySelector('.again').addEventListener(
