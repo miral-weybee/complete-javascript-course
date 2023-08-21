@@ -141,6 +141,8 @@ btnLogin.addEventListener('click', function (e) {
     inputLoginUsername.value = inputLoginPin.value = '';
     updateUI();
     flag=true
+    document.querySelector('#uname').classList.add("hide");
+    document.querySelector('#pin').classList.add("hide");
   } else {
     alert("Invalid Credentials")
     flag=false;
@@ -148,6 +150,8 @@ btnLogin.addEventListener('click', function (e) {
   if (flag){
     document.querySelector('.login__btn').classList.add("hide");
     document.querySelector('.logout__btn').classList.remove("hide");
+    
+
   }
 
 });
