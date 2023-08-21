@@ -128,7 +128,7 @@ team1 > team2 && console.log('Team 2 is more likely to win');
 //1
 for (let index = 0; index < game.scored.length; index++) {
   console.log(`Goal ${index + 1} : ${game.scored[index]}`);
-} 
+}
 
 //2
 const avg = ((team1 + team2 + draw) / 3).toFixed(2);
@@ -176,10 +176,10 @@ console.log(gameEvents);
 console.log(`An event happened, on average, every ${90 / gameEvents.size}  minutes`);
 
 //4
-for (let [key,values] of gameEvents) {
+for (let [key, values] of gameEvents) {
   if (key < 45) {
     console.log(`[FIRST HALF] ${key}: ${values}`);
-  }else {
+  } else {
     console.log(`[SECOND HALF] ${key}: ${values}`);
   }
 }
@@ -189,13 +189,13 @@ for (let [key,values] of gameEvents) {
 document.body.append(document.createElement('textarea'));
 document.body.append(document.createElement('button'));
 
-document.querySelector('button').addEventListener('click', function() {
+document.querySelector('button').addEventListener('click', function () {
   const text = document.querySelector('textarea').value;
   const rows = text.split('\n');
-  for(const [i, row] of rows.entries()){
+  for (const [i, row] of rows.entries()) {
     const [first, second] = row.toLowerCase().trim().split('_');
     const output = `${first}${second.replace(second[0], second[0].toUpperCase())}`;
-    console.log(`${output.padEnd(20)} ${'✅'.repeat(i+1)}`);
+    console.log(`${output.padEnd(20)} ${'✅'.repeat(i + 1)}`);
   }
-  
+
 })
